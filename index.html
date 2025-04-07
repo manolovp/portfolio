@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Eduardo Vivar - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">  
+</head>   
+<body>
+  <div class="hero-header">
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <i class="fa-solid fa-e"></i>
+          <div class="logo-text">duardo Vivar</div>
+        </div>
+        <nav>
+          <div class="togglebtn">
+            <a class="togglebtn-icon">☰</a>
+          </div>
+          <ul class="navlinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>        
+            <li><a href="#">Resume</a></li>        
+            <li><a href="#contact">Contact</a></li>       
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <div class="hero-pic">
+          <img src="img/fotoperfil.png" alt="profile pic"> 
+        </div>
+        <div class="hero-text">
+          <h5>Hi, I'm <span class="typed-text"></span></h5>
+          <h1>Eduardo Vivar</h1>  
+          <p>Systems engineer and data enthusiast with strong SQL and ERP development foundations, currently focused on data engineering, modeling and ETL processes.</p>
+          <div class="btn-group">
+            <a href="https://drive.google.com/uc?export=download&id=1Zin6ek3YxOO2_2Km7LffBf_tcsr5LYH-" class="btn active">Download CV</a>
+            <a href="#contact" class="btn">Contact</a>
+          </div>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/evivarp/?locale=en_US"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/manolovp"  target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>        
+    </div>
+  </div>
+
+  <!-- Corrected Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+  <script>
+    var togglebtn = document.querySelector(".togglebtn");
+    var nav = document.querySelector(".navlinks");
+    
+    togglebtn.addEventListener("click", function() {
+      this.classList.toggle("click");
+      nav.classList.toggle("open");
+    });
+
+    var typed = new Typed(".typed-text", {
+      strings: ["Data engineer", "ETL developer", "SQL developer"],
+      typeSpeed: 70,
+      backSpeed: 55,
+      loop: true
+    });
+  </script>
+<section id="contact" class="contact-section">
+  <div class="wrapper">
+    <h2>Contact Me</h2>
+    <p>If you'd like to work together or have any questions, feel free to send me an email! eduardovivarp@gmail.com
+      <button id="copyEmailBtn" class="copy-btn" title="Copy email">
+        📋
+      </button>
+      <span id="copySuccess" class="copy-success">Copied!</span>
+    </p>
+    <p>
+      Or contact me on WhatsApp: 
+      <a href="https://wa.me/34697709856" target="_blank" class="whatsapp-btn" title="Open WhatsApp">
+        💬 Chat
+      </a>
+      <button id="copyPhoneBtn" class="copy-btn" title="Copy phone">📋</button>
+      <span id="copyPhoneSuccess" class="copy-success">Copied!</span>
+    </p>
+    <a href="mailto:eduardovivarp@gmail.com" class="btn contact-btn">Send Email</a>
+  </div>
+</section>
+<script>
+  document.getElementById("copyEmailBtn").addEventListener("click", function () {
+    const email = "eduardovivarp@gmail.com"; // replace with your actual email
+    navigator.clipboard.writeText(email).then(function () {
+      const success = document.getElementById("copySuccess");
+      success.style.opacity = 1;
+      setTimeout(() => {
+        success.style.opacity = 0;
+      }, 2000);
+    });
+  });
+  document.getElementById("copyPhoneBtn").addEventListener("click", function () {
+    const phone = "+34 697 709 856"; // Replace with your real number
+    navigator.clipboard.writeText(phone).then(function () {
+      const success = document.getElementById("copyPhoneSuccess");
+      success.style.opacity = 1;
+      setTimeout(() => {
+        success.style.opacity = 0;
+      }, 2000);
+    });
+  });
+
+</script>
+</body>
+</html>
